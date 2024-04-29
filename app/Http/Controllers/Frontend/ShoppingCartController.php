@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\DiscountCode;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\Transaction;
 use App\Services\ShoppingCartService\PayManager;
-use Illuminate\Http\Request;
-use App\Models\Product;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
 
@@ -18,7 +18,6 @@ class ShoppingCartController extends Controller
     private $vnp_TmnCode = "M0BKWT0Y"; //Mã website tại VNPAY
     private $vnp_HashSecret = "JNDBAWSROHDXUQVKHHQZOXQZBHYXNXTI"; //Chuỗi bí mật
     private $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    private $vnp_Returnurl = 'http://127.0.0.1:8000/shopping/hook';
     protected $idTransaction = 0;
 
     public function index()
